@@ -69,7 +69,8 @@ class Application(Gtk.Window):
 
 		print "# # # # # start Install HZG # # # # #"
 		os.system('sudo mv Forguncy*.tar /tmp')
-		os.system('sudo tar -xvf /tmp/Forguncy*.tar')
+		os.system('sudo unzip -zxvf /tmp/Forguncy*.tar')
+		os.system('sudo tar -zxvf /tmp/Forguncy*.tar')
 		os.system('sudo snap  install dotnet-sdk --classic --channel=3.1')
 		os.system("sudo snap  install dotnet-runtime-31 --classic")
 		os.system('sudo bash installForguncy*.sh')
