@@ -118,7 +118,7 @@ class Application(Gtk.Window):
 		print "# # # # # # delete # # # # # #\n"
 
 	@staticmethod
-	def install_mysql(widget):
+	def reset(widget):
 		print "# # # # # # start reset# # # # # #\n"
 		os.system('sudo rm /var/lib/dpkg/lock')
 		os.system('sudo rm /var/lib/dpkg/lock-frontend')
