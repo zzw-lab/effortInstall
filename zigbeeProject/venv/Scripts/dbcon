@@ -1,0 +1,5 @@
+#!C:\Users\Admin\Desktop\公司项目模拟\zigbeeProject\venv\Scripts\python.exe
+import sys
+sys.path.append('.')
+import dbcon.cli
+dbcon.cli.main()

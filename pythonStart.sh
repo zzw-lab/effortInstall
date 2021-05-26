@@ -1,0 +1,1 @@
+nohup python -u SendMsg.py > test.out 2>&1 &

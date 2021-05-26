@@ -1,0 +1,16 @@
+#!/bin/bash
+source /etc/profile
+startPython=/usr/local/zigbeeProject/pythonStart.sh
+isT=$(ps -C python --no-heading| wc -l)
+echo "$(date +%Y-%m-%d,%H:%M:%S) ------ start python is $isT" >>/usr/local/zigbeeProject/test.out
+while [ $isT -eq 0 ]
+do
+	echo "$(date +%Y-%m-%d,%H:%M:%S) ------start python is false, so restart python" >>/usr/local/zigbeeProject/test.out
+	$startPython
+	sleep 2
+	isT=$(ps -C python --no-heading| wc -l)
+done
+
+
+
+
