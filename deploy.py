@@ -26,6 +26,10 @@ class Application(Gtk.Window):
 		self.button2.connect("clicked", self.unload_All)
 		self.box.pack_start(self.button2, True, True, 0)
 
+		self.button3 = Gtk.Button.new_with_label("reset")
+		self.button3.connect("clicked", self.reset)
+		self.box.pack_start(self.button3, True, True, 0)
+
 
 
 	@staticmethod
@@ -111,6 +115,14 @@ class Application(Gtk.Window):
 		os.system('sudo rm -rf /usr/local/effortInstall')
 		os.system('sudo rm -rf /etc/rc.local')
 		print "# # # # # # delete # # # # # #\n"
+
+	@staticmethod
+	def install_mysql(widget):
+		print "# # # # # # start reset# # # # # #\n"
+		os.system('sudo rm /var/lib/dpkg/lock')
+		os.system('sudo rm /var/lib/dpkg/lock-frontend')
+		os.system('sudo rm /var/cache/apt/archives/lock')
+		print "# # # # # # reset finished # # # # # #\n"
 
 
 
